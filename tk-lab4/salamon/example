@@ -1,0 +1,27 @@
+@Book{ press,
+author = Press,
+author = Presss,
+title = Numerical,
+year = "YEA efwef R",
+publisher = "Cambridge dverav " 
+}
+
+@Bookkkk{             press,
+Author = "           blabla "
+ratata = "ffddssaa"
+}
+
+@Inproceedings{  asdddf,
+AAAAAAauthor = " bla bla",
+author = "fd fd f df dffasdf",
+
+ratata = ffddssaa,
+journal = ffeessaa
+}
+
+@Book { good,
+author = Milosz,
+title = "ughthhsdf",
+year = 2134,
+publisher = "Cambridge University Press"
+}

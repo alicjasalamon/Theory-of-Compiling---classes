@@ -1,0 +1,193 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> publications
+Rule 1     publications -> publication
+Rule 2     publications -> publications publication
+Rule 3     publication -> type { WARTOSC , fields }
+Rule 4     fields -> field
+Rule 5     fields -> fields , field
+Rule 6     field -> WARTOSC = WARTOSC_W_CUDZYSLOWIE
+Rule 7     field -> WARTOSC = WARTOSC
+Rule 8     type -> RODZAJ_PUBLIKACJI
+
+Terminals, with rules where they appear
+
+,                    : 3 5
+=                    : 6 7
+RODZAJ_PUBLIKACJI    : 8
+WARTOSC              : 3 6 7 7
+WARTOSC_W_CUDZYSLOWIE : 6
+error                : 
+{                    : 3
+}                    : 3
+
+Nonterminals, with rules where they appear
+
+field                : 4 5
+fields               : 3 5
+publication          : 1 2
+publications         : 2 0
+type                 : 3
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . publications
+    (1) publications -> . publication
+    (2) publications -> . publications publication
+    (3) publication -> . type { WARTOSC , fields }
+    (8) type -> . RODZAJ_PUBLIKACJI
+
+    RODZAJ_PUBLIKACJI shift and go to state 2
+
+    type                           shift and go to state 4
+    publications                   shift and go to state 3
+    publication                    shift and go to state 1
+
+state 1
+
+    (1) publications -> publication .
+
+    RODZAJ_PUBLIKACJI reduce using rule 1 (publications -> publication .)
+    $end            reduce using rule 1 (publications -> publication .)
+
+
+state 2
+
+    (8) type -> RODZAJ_PUBLIKACJI .
+
+    {               reduce using rule 8 (type -> RODZAJ_PUBLIKACJI .)
+
+
+state 3
+
+    (0) S' -> publications .
+    (2) publications -> publications . publication
+    (3) publication -> . type { WARTOSC , fields }
+    (8) type -> . RODZAJ_PUBLIKACJI
+
+    RODZAJ_PUBLIKACJI shift and go to state 2
+
+    type                           shift and go to state 4
+    publication                    shift and go to state 5
+
+state 4
+
+    (3) publication -> type . { WARTOSC , fields }
+
+    {               shift and go to state 6
+
+
+state 5
+
+    (2) publications -> publications publication .
+
+    RODZAJ_PUBLIKACJI reduce using rule 2 (publications -> publications publication .)
+    $end            reduce using rule 2 (publications -> publications publication .)
+
+
+state 6
+
+    (3) publication -> type { . WARTOSC , fields }
+
+    WARTOSC         shift and go to state 7
+
+
+state 7
+
+    (3) publication -> type { WARTOSC . , fields }
+
+    ,               shift and go to state 8
+
+
+state 8
+
+    (3) publication -> type { WARTOSC , . fields }
+    (4) fields -> . field
+    (5) fields -> . fields , field
+    (6) field -> . WARTOSC = WARTOSC_W_CUDZYSLOWIE
+    (7) field -> . WARTOSC = WARTOSC
+
+    WARTOSC         shift and go to state 10
+
+    fields                         shift and go to state 9
+    field                          shift and go to state 11
+
+state 9
+
+    (3) publication -> type { WARTOSC , fields . }
+    (5) fields -> fields . , field
+
+    }               shift and go to state 13
+    ,               shift and go to state 12
+
+
+state 10
+
+    (6) field -> WARTOSC . = WARTOSC_W_CUDZYSLOWIE
+    (7) field -> WARTOSC . = WARTOSC
+
+    =               shift and go to state 14
+
+
+state 11
+
+    (4) fields -> field .
+
+    }               reduce using rule 4 (fields -> field .)
+    ,               reduce using rule 4 (fields -> field .)
+
+
+state 12
+
+    (5) fields -> fields , . field
+    (6) field -> . WARTOSC = WARTOSC_W_CUDZYSLOWIE
+    (7) field -> . WARTOSC = WARTOSC
+
+    WARTOSC         shift and go to state 10
+
+    field                          shift and go to state 15
+
+state 13
+
+    (3) publication -> type { WARTOSC , fields } .
+
+    RODZAJ_PUBLIKACJI reduce using rule 3 (publication -> type { WARTOSC , fields } .)
+    $end            reduce using rule 3 (publication -> type { WARTOSC , fields } .)
+
+
+state 14
+
+    (6) field -> WARTOSC = . WARTOSC_W_CUDZYSLOWIE
+    (7) field -> WARTOSC = . WARTOSC
+
+    WARTOSC_W_CUDZYSLOWIE shift and go to state 17
+    WARTOSC         shift and go to state 16
+
+
+state 15
+
+    (5) fields -> fields , field .
+
+    }               reduce using rule 5 (fields -> fields , field .)
+    ,               reduce using rule 5 (fields -> fields , field .)
+
+
+state 16
+
+    (7) field -> WARTOSC = WARTOSC .
+
+    }               reduce using rule 7 (field -> WARTOSC = WARTOSC .)
+    ,               reduce using rule 7 (field -> WARTOSC = WARTOSC .)
+
+
+state 17
+
+    (6) field -> WARTOSC = WARTOSC_W_CUDZYSLOWIE .
+
+    }               reduce using rule 6 (field -> WARTOSC = WARTOSC_W_CUDZYSLOWIE .)
+    ,               reduce using rule 6 (field -> WARTOSC = WARTOSC_W_CUDZYSLOWIE .)
+

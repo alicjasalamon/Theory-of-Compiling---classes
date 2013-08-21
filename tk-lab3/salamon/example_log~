@@ -1,0 +1,34 @@
+int max(t)
+char t;
+{
+	/* body */ 
+}
+
+int g(a,b,c,d,l)
+char l;
+int** a, b;
+float c, d[100];
+{
+	/* body */ 
+}
+    
+float h(z)
+int z;
+{
+    //  }}}}}}}}}}}}}
+    char* str = "{{{{{{{{{{";
+    /* ... */ 
+}
+}
+
+struct lol rand()
+char r;
+{
+	/* body2 */ 
+}
+
+
+
+
+
+
